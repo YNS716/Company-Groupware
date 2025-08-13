@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo"></div>
+            <h1 class="header-title">Company Portal</h1>
+        </div>
+        <div class="user-info">
+            <div class="user-avatar">김</div>
+            <span>김철수</span>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <a href="#" class="nav-item active" onclick="showSection('dashboard')">
+                📊 대시보드
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('calendar')">
+                📅 일정관리
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('messages')">
+                💬 메시지
+            </a>
+            <a href="#" class="nav-item" onclick="showSection('teams')">
+                👥 조직도
+            </a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard -->
+            <div id="dashboard" class="content-section">
+                <div class="welcome-banner">
+                    <h2>안녕하세요, 김철수님!</h2>
+                    <p>개발팀 • 팀장</p>
+                    <p>오늘도 좋은 하루 되세요!</p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">오늘의 일정</h3>
+                            <div class="card-icon">📅</div>
+                        </div>
+                        <div class="item-list">
+                            <div class="item item-schedule">
+                                <div class="item-dot dot-blue"></div>
+                                <div class="item-content">
+                                    <h4>프로젝트 킥오프 미팅</h4>
+                                    <p>14:00-15:00</p>
+                                </div>
+                            </div>
+                            <div class="item item-schedule">
+                                <div class="item-dot dot-blue"></div>
+                                <div class="item-content">
+                                    <h4>주간 팀 회의</h4>
+                                    <p>16:00-17:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">새 메시지</h3>
+                            <div class="card-icon">💬</div>
+                        </div>
+                        <div class="item-list">
+                            <div class="item item-message">
+                                <div class="item-dot dot-green"></div>
+                                <div class="item-content">
+                                    <h4>프로젝트 진행 현황</h4>
+                                    <p>이영희 • 오전 9:30</p>
+                                </div>
+                            </div>
+                            <div class="item item-message">
+                                <div class="item-dot dot-green"></div>
+                                <div class="item-content">
+                                    <h4>새로운 요구사항</h4>
+                                    <p>최지원 • 어제</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">할 일</h3>
+                            <div class="card-icon">📋</div>
+                        </div>
+                        <div class="item-list">
+                            <div class="item item-todo">
+                                <div class="item-dot dot-orange"></div>
+                                <div class="item-content">
+                                    <h4>프로젝트 계획서 작성</h4>
+                                    <p>마감일: 2025-08-15</p>
+                                </div>
+                            </div>
+                            <div class="item item-todo">
+                                <div class="item-dot dot-orange"></div>
+                                <div class="item-content">
+                                    <h4>클라이언트 피드백 검토</h4>
+                                    <p>마감일: 2025-08-14</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar -->
+            <div id="calendar" class="content-section hidden">
+                <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">일정관리</h2>
+                        <button class="btn-primary">+ 일정 추가</button>
+                    </div>
+                    
+                    <div class="meeting-item">
+                        <div>
+                            <h4>프로젝트 킥오프 미팅</h4>
+                            <p>14:00-15:00</p>
+                            <p>참석자: 김철수, 이영희, 박민수</p>
+                        </div>
+                        <span class="status-badge">예정</span>
+                    </div>
+
+                    <div class="meeting-item">
+                        <div>
+                            <h4>주간 팀 회의</h4>
+                            <p>16:00-17:00</p>
+                            <p>참석자: 김철수, 이영희, 박민수, 최지원</p>
+                        </div>
+                        <span class="status-badge">예정</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Messages -->
+            <div id="messages" class="content-section hidden">
+                <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">메시지</h2>
+                        <button class="btn-primary">+ 새 메시지</button>
+                    </div>
+                    
+                    <div class="message-card unread">
+                        <div class="message-header">
+                            <div class="message-info">
+                                <div class="unread-dot"></div>
+                                <div>
+                                    <h4>프로젝트 진행 현황</h4>
+                                    <p>이영희</p>
+                                </div>
+                            </div>
+                            <span class="message-time">오전 9:30</span>
+                        </div>
+                    </div>
+
+                    <div class="message-card">
+                        <div class="message-header">
+                            <div class="message-info">
+                                <div>
+                                    <h4>회의록 공유</h4>
+                                    <p>박민수</p>
+                                </div>
+                            </div>
+                            <span class="message-time">어제</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Teams -->
+            <div id="teams" class="content-section hidden">
+                <div class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">조직도</h2>
+                        <input type="text" placeholder="직원 검색" class="search-input">
+                    </div>
+                    
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-avatar">김</div>
+                            <div class="member-info">
+                                <h4>김철수</h4>
+                                <p>팀장</p>
+                                <p>개발팀</p>
+                            </div>
+                            <div class="status-dot online"></div>
+                        </div>
+
+                        <div class="team-member">
+                            <div class="member-avatar">이</div>
+                            <div class="member-info">
+                                <h4>이영희</h4>
+                                <p>선임개발자</p>
+                                <p>개발팀</p>
+                            </div>
+                            <div class="status-dot online"></div>
+                        </div>
+
+                        <div class="team-member">
+                            <div class="member-avatar">박</div>
+                            <div class="member-info">
+                                <h4>박민수</h4>
+                                <p>개발자</p>
+                                <p>개발팀</p>
+                            </div>
+                            <div class="status-dot away"></div>
+                        </div>
+
+                        <div class="team-member">
+                            <div class="member-avatar">최</div>
+                            <div class="member-info">
+                                <h4>최지원</h4>
+                                <p>디자이너</p>
+                                <p>디자인팀</p>
+                            </div>
+                            <div class="status-dot away"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
